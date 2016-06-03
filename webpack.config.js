@@ -79,13 +79,6 @@ const newloader = Object.assign({}, cssloader, {
 })
 config.module.loaders.push(newloader);
 cssloader.test = new RegExp(`[^module]${cssloader.test.source}`)
-cssloader.loader = newloader.loader
-
-config.module.loaders.push({
-  test: /\.css$/,
-  include: [modules],
-  loader: 'style!css'
-})
 // CSS modules
 
 // postcss
